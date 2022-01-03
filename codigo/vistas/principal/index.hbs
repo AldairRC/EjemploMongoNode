@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Inicial</title>
+    <!-- 
+        EL USO DE ARCHIVOS ESTATICOS COMO ARCHIVOS CSS Y JS DEBEN ESTAR 
+        DENTRO DE LA CARPETA ESTATICA "public" UBICADO EN LA MISMA CARPETA QUE "servidor.js"
+    -->
+    <link type="text/css" href="principal/index.css" rel="stylesheet">
+    <script src="principal/index.js" defer></script>
+</head>
+<body>
+    <!-- APARTADO 1 -->
+    <div class="vertical apartado1">
+        <!-- FORMULARIO NUEVO PRODUCTO -->
+        <div class="vertical">
+            <input id="cajaNombre"  class="cajaFormulario"  placeholder="Nombre" type="text"/>
+            <input id="cajaDesc"  class="cajaFormulario"  placeholder="Descripcion" type="text"/>
+            <input id="cajaPrecio"  class="cajaFormulario"  placeholder="Precio" type="number"/>
+            <div id="botonGuardar" class="boton"> Guardar </div>
+        </div>
+        <!-- FORMULARIO BUSQUEDA -->
+        <div class="vertical">
+            <input id="cajaBuscarNombre"  class="cajaFormulario"  placeholder="Nombre" type="text"/>
+            <div id="botonBuscar" class="boton"> Buscar </div>
+        </div>
+    </div>
+    
+
+    <!-- TABLA DE DATOS -->
+    <div class="tabla">
+        <!-- COLUMNA NOMBRE -->
+        <div id="columnaNombre"  class="columna">
+            <div class="celdaH"> Nombre </div>
+        </div>
+        <!-- COLUMNA DESCRIPCION -->
+        <div id="columnaDescripcion"  class="columna">
+            <div class="celdaH"> Descripcion </div>
+        </div>
+        <!-- COLUMNA PRECIO -->
+        <div id="columnaPrecio"  class="columna">
+            <div class="celdaH"> Precio </div>
+        </div> 
+        <!-- COLUMNA BOTON EDITAR -->
+        <div id="columnaBotonEditar"  class="columnaBoton">
+            <div class="celdaH"> </div>
+        </div>
+        <!-- COLUMNA BOTON ELIMINAR -->
+        <div id="columnaBotonEliminar"  class="columnaBoton">
+            <div class="celdaH"> </div>
+        </div>
+    
+    </div>
+
+    {{> principal/pieDePagina }}  {{! IMPORTAR UNA PORCION DE CODIGO HTML (archivo ubicado en la carpeta "partials") }}
+
+</body>
+</html>

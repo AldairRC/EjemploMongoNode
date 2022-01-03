@@ -1,0 +1,8 @@
+# VARIABLES DE ENTORNO
+.env
+# INSTALACION DE MODULOS
+node_modules
+# ARCHIVOS DE TEXTO
+comandos Node.txt
+# CODIGO DE PRODUCCION
+codigoProduccion

@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+    height: 100vh;
+}
+
+.vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 5px 7px;
+}
+
+.apartado1 {
+    justify-content: space-between;
+}
+
+.cajaFormulario {
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    padding: 5px;
+}
+
+.boton {
+    display: grid;
+    place-items: center;
+    padding: 5px 9px;
+    background-color: #1e6828;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.boton:hover {
+    background-color: lightgreen;
+    color: black;
+}
+
+.tabla {
+    flex-grow: 2;
+    display: flex;
+    flex-direction: row;
+    gap: 1px;
+    padding: 5px 7px;
+}
+
+.columna , .columnaBoton {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.columnaBoton {
+    flex-grow: 2;
+}
+
+.celdaH {
+    display: grid;
+    place-items: center;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    background-color: #85b98cd7;
+    color: black;
+    height: 40px;
+}
+
+.celdaD {
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    height: 30px;
+}
+
+
+.footer {
+    display: grid;
+    place-items: center;
+    padding: 8px 5px;
+    width: 100%;
+    height: fit-content;
+    background-color: #1e6828;
+    color: wheat;
+}
