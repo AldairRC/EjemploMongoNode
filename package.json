@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node codigo/servidor.js",
+    "start": "node codigoProduccion/servidor.js",
     "dev": "nodemon --exec npx babel-node codigo/servidor.js" ,
     "build": "babel codigo -d codigoProduccion && ncp codigo/vistas codigoProduccion/vistas"
   },
