@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node codigoProduccion/servidor.js",
     "dev:nodemon": "nodemon",
-    "compilar": "babel codigo --extensions .ts -d codigoProduccion && ncp codigo/public/vistas codigoProduccion/public/vistas",
-    "dev:ts": "tsc --watch" ,
+    "compilar": "babel codigo --extensions .ts -d codigoProduccion && cpx codigo/public/**/*.js codigoProduccion/public && ncp codigo/public/vistas codigoProduccion/public/vistas",
+    "dev:ts": "tsc --watch",
     "dev": "concurrently npm:dev:*"
   },
   "keywords": [],
@@ -34,6 +34,7 @@
     "@types/express": "^4.17.13",
     "@types/multer": "^1.4.7",
     "concurrently": "^7.0.0",
+    "cpx": "^1.5.0",
     "ncp": "^2.0.0",
     "nodemon": "^2.0.15"
   }
