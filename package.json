@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node codigoProduccion/servidor.js",
     "dev:nodemon": "nodemon",
-    "build": "babel codigo --extensions .ts -d codigoProduccion && ncp codigo/public/vistas codigoProduccion/public/vistas",
+    "compilar": "babel codigo --extensions .ts -d codigoProduccion && ncp codigo/public/vistas codigoProduccion/public/vistas",
     "dev:ts": "tsc --watch" ,
     "dev": "concurrently npm:dev:*"
   },
