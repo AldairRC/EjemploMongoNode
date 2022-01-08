@@ -6,19 +6,22 @@
     <title>Pagina Inicial</title>
     <!-- 
         EL USO DE ARCHIVOS ESTATICOS COMO ARCHIVOS CSS Y JS DEBEN ESTAR 
-        DENTRO DE LA CARPETA ESTATICA "public" UBICADO EN LA MISMA CARPETA QUE "servidor.js"
+        DENTRO DE LA CARPETA ESTATICA "public" y la ruta de los archivos 
+        comienza a partir de la carpeta "public"
     -->
-    <link type="text/css" href="principal/index.css" rel="stylesheet">
-    <script src="principal/index.js" defer></script>
+    <link type="text/css" href="vistas/principal/index.css" rel="stylesheet">
+    <script src="JS/principal/index.js" defer></script>
 </head>
 <body>
     <!-- APARTADO 1 -->
     <div class="vertical apartado1">
         <!-- FORMULARIO NUEVO PRODUCTO -->
-        <div class="vertical">
+        <div class="vertical divFormularioAdd">
             <input id="cajaNombre"  class="cajaFormulario"  placeholder="Nombre" type="text"/>
             <input id="cajaDesc"  class="cajaFormulario"  placeholder="Descripcion" type="text"/>
             <input id="cajaPrecio"  class="cajaFormulario"  placeholder="Precio" type="number"/>
+            <img id="imgProducto"  src="">
+            <div id="botonUpload" class="boton"> Elegir Foto </div>
             <div id="botonGuardar" class="boton"> Guardar </div>
         </div>
         <!-- FORMULARIO BUSQUEDA -->
@@ -42,6 +45,10 @@
         <!-- COLUMNA PRECIO -->
         <div id="columnaPrecio"  class="columna">
             <div class="celdaH"> Precio </div>
+        </div> 
+        <!-- COLUMNA IMAGEN -->
+        <div id="columnaFoto"  class="columna">
+            <div class="celdaH"> Foto </div>
         </div> 
         <!-- COLUMNA BOTON EDITAR -->
         <div id="columnaBotonEditar"  class="columnaBoton">

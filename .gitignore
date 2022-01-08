@@ -4,5 +4,11 @@
 node_modules
 # ARCHIVOS DE TEXTO
 comandos Node.txt
-# CODIGO DE PRODUCCION
-codigoProduccion
+# CODIGO DE DESARROLLO
+codigo
+# CARPETA DE ARCHIVOS 
+archivos
+# CONFIGURACION DE NODEMON
+nodemon.json
+# CONFIGURACION DE TS
+tsconfig.json

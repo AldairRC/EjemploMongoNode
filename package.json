@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "node codigoProduccion/servidor.js",
-    "dev": "nodemon --exec npx babel-node codigo/servidor.js",
-    "build": "babel codigo -d codigoProduccion && ncp codigo/vistas codigoProduccion/vistas"
+    "dev:nodemon": "nodemon",
+    "build": "babel codigo --extensions .ts -d codigoProduccion && ncp codigo/public/vistas codigoProduccion/public/vistas",
+    "dev:ts": "tsc --watch" ,
+    "dev": "concurrently npm:dev:*"
   },
   "keywords": [],
   "author": "",
@@ -28,6 +30,10 @@
     "@babel/node": "^7.16.7",
     "@babel/plugin-transform-runtime": "^7.16.7",
     "@babel/preset-env": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
+    "@types/express": "^4.17.13",
+    "@types/multer": "^1.4.7",
+    "concurrently": "^7.0.0",
     "ncp": "^2.0.0",
     "nodemon": "^2.0.15"
   }

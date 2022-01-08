@@ -20,7 +20,12 @@ body {
 }
 
 .apartado1 {
+    flex-basis: 30%;
     justify-content: space-between;
+}
+
+.divFormularioAdd {
+    width: 100%;
 }
 
 .cajaFormulario {
@@ -47,6 +52,11 @@ body {
 .boton:hover {
     background-color: lightgreen;
     color: black;
+}
+
+#imgProducto {
+    width: 100%;
+    object-fit: cover;
 }
 
 .tabla {
@@ -84,9 +94,14 @@ body {
     font-size: 16px;
     font-weight: 600;
     text-align: center;
-    height: 30px;
+    height: 80px
 }
 
+
+.celdaImagenD {
+    height: 80px;
+    object-fit: cover;
+}
 
 .footer {
     display: grid;
@@ -96,4 +111,10 @@ body {
     height: fit-content;
     background-color: #1e6828;
     color: wheat;
+}
+
+
+
+.oculto {
+    display: none;
 }
