@@ -4,19 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina Inicial</title>
-    <!-- 
+    {{! 
         EL USO DE ARCHIVOS ESTATICOS COMO ARCHIVOS CSS Y JS DEBEN ESTAR 
         DENTRO DE LA CARPETA ESTATICA "public" y la ruta de los archivos 
         comienza a partir de la carpeta "public"
-    -->
+    }} 
+    <link rel="stylesheet"  href="vistas/RECURSOS/material-components-web.min.css">
     <link type="text/css" href="vistas/principal/index.css" rel="stylesheet">
-    <script src="JS/principal/index.js" defer></script>
+
+    <script src="vistas/RECURSOS/material-components-web.min.js"  defer></script>
+    {{!<script src="JS/principal/index.js" type="module"  defer></script>}}
+    <script src="vistas/principal/main.js" type="module"  defer></script>
 </head>
 <body>
     <!-- APARTADO 1 -->
     <div class="vertical apartado1">
         <!-- FORMULARIO NUEVO PRODUCTO -->
         <div class="vertical divFormularioAdd">
+            
+            {{! INPUT DE TIPO MATERIAL DESSIGN }}
+            <label class="mdc-text-field mdc-text-field--outlined">
+                <span class="mdc-notched-outline">
+                    <span class="mdc-notched-outline__leading"></span>
+                    <span class="mdc-notched-outline__notch">
+                        <span class="mdc-floating-label" id="my-label-id"> Prueba </span>
+                    </span>
+                    <span class="mdc-notched-outline__trailing"></span>
+                </span>
+                <input id="input_prueba"  type="text" class="mdc-text-field__input" aria-labelledby="my-label-id">
+            </label>
+            
             <input id="cajaNombre"  class="cajaFormulario"  placeholder="Nombre" type="text"/>
             <input id="cajaDesc"  class="cajaFormulario"  placeholder="Descripcion" type="text"/>
             <input id="cajaPrecio"  class="cajaFormulario"  placeholder="Precio" type="number"/>

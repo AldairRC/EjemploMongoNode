@@ -14,7 +14,7 @@ var _bodyParser = _interopRequireDefault(require("body-parser"));
 
 var _mongoose = _interopRequireDefault(require("mongoose"));
 
-var _expressHandlebars = require("express-handlebars");
+var _cors = _interopRequireDefault(require("cors"));
 
 var _indexRutas = _interopRequireDefault(require("./rutas/index-rutas"));
 
@@ -78,28 +78,36 @@ var server = (0, _express["default"])(); // CONFIGURAR EL PUERTO DE PETICIONES H
 
 server.set('port', _config.PUERTO_SERVIDOR); // ESUCHAR POR EL PUERTO DEVUELTO POR EL SO ... POR DEFAULT 3000
 // CONFIGURAR LA CARPETA DE LAS PAGINAS HTML DE RESPUESTA
+//server.set('views' ,  path.join( __dirname , 'public' , 'vistas') )  // INDICAR LA CARPETA DE LAS VISTAS O PAGINAS A MOSTRAR
 
-server.set('views', _path["default"].join(__dirname, 'public', 'vistas')); // INDICAR LA CARPETA DE LAS VISTAS O PAGINAS A MOSTRAR
-// CONFIGURAR LA CARPETA DE ARCHIVOS ESTATICOS css , img , etc.
-
-server.use(_express["default"]["static"](_path["default"].join(__dirname, 'public'))); // CONFIGURAR EL MANEJADOR DE RUTAS
+server.use((0, _cors["default"])()); // CONFIGURAR EL MANEJADOR DE RUTAS
 //server.use('/' , indexRutas )
 
-server.use(_indexRutas["default"]); // CONFIGURAR PARA LA RECEPCION DE DATOS DE TIPO FormData() 
+server.use("/api", _indexRutas["default"]);
+
+if (process.env.NODE_ENV === 'production') {
+  // CONFIGURAR LA CARPETA DE ARCHIVOS ESTATICOS css , img , etc.
+  server.use(_express["default"]["static"](_path["default"].join(__dirname, '..', 'wing-ui', 'build')));
+  server.use('*', function (peticion, respuesta) {
+    respuesta.sendFile(_path["default"].resolve(__dirname, '..', 'wing-ui', 'build', 'index.html'));
+  });
+} // CONFIGURAR PARA LA RECEPCION DE DATOS DE TIPO FormData() 
+
 
 server.use(_bodyParser["default"].urlencoded({
   extended: true
 }));
 server.use(_bodyParser["default"].json()); // CONFIGURAR EL MOTOR DE PLANTILLAS HTML
 
-var handlebars = (0, _expressHandlebars.create)({
-  extname: '.hbs',
-  layoutsDir: _path["default"].join(server.get("views"), "layouts"),
-  partialsDir: _path["default"].join(server.get("views"), "partials"),
-  defaultLayout: 'main'
-});
-server.engine('.hbs', handlebars.engine);
-server.set('view engine', '.hbs'); // establecer "handlebars" como motor de plantillas HTML
+/*const handlebars = create({
+    extname: '.hbs' ,
+    layoutsDir: path.join( server.get("views") , "layouts") ,
+    partialsDir: path.join( server.get("views") , "partials") ,
+    defaultLayout:'main'
+})
+server.engine('.hbs' , handlebars.engine )
+server.set('view engine' , '.hbs')  // establecer "handlebars" como motor de plantillas HTML
+*/
 //==================================
 // EJECUCION DEL SERVIDOR
 //==================================
