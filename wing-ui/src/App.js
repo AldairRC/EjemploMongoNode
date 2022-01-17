@@ -7,7 +7,7 @@ function App() {
     const datosPOST = new FormData()
     datosPOST.append( "nombre" , "" )
 
-    const respuestaHTTP = await fetch( "https://ejemplo-mongodb.herokuapp.com/getProductos" , {
+    const respuestaHTTP = await fetch( "https://ejemplo-mongodb.herokuapp.com/api/getProductos" , {
       method: "POST" ,
       body:datosPOST
     })
