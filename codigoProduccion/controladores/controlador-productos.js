@@ -15,8 +15,6 @@ var _producto = _interopRequireDefault(require("../modelos/producto"));
 
 var _fs = _interopRequireDefault(require("fs"));
 
-var _path = _interopRequireDefault(require("path"));
-
 //=================================================
 // IMPORTACIONES
 //=================================================
@@ -225,8 +223,8 @@ var buscar = /*#__PURE__*/function () {
                 nombre: documento.nombre,
                 descripcion: documento.descripcion,
                 precio: documento.precio,
-                imagen: _fs["default"].readFileSync(documento.imagen).toString('base64'),
-                extension: _path["default"].extname(documento.imagen).replace('.', ''),
+                //imagen: fs.readFileSync(documento.imagen).toString('base64') ,
+                //extension: path.extname(documento.imagen).replace('.' , '') ,
                 id: documento._id,
                 fechaCreacion: documento.createdAt,
                 fechaModif: documento.updatedAt
